@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="storesViewModel"
+            type="com.app.bottlerocket.mvvm.viewmodel.StoreItemViewModel" />
+    </data>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/store_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{storesViewModel::onItemClick}"
+        android:padding="@dimen/spacing_large"
+        cardview:cardCornerRadius="@dimen/cardview_radius"
+        cardview:cardElevation="@dimen/cardview_elevation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_store"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@color/cardview_light_background"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                tools:imageUrl="@{storesViewModel.pictureProfile}" />
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{storesViewModel.storeName}"
+                android:textSize="16sp"
+                tools:text="Store Name" />
+
+            <TextView
+                android:id="@+id/label_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:visibility="visible"
+                android:text="@{storesViewModel.phoneNumber}"
+                android:textSize="16sp"
+                tools:text="phone" />
+
+            <TextView
+                android:id="@+id/label_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="7dp"
+                android:visibility="gone"
+                android:text="@{storesViewModel.address}"
+                android:textSize="14sp"
+                tools:text="0729-256-147" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

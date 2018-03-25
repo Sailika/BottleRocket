@@ -1,0 +1,65 @@
+ext {
+
+    //Version
+    supportVersion = '27.0.2'
+
+    retrofitVersion = '2.2.0'
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.5'
+
+    googleVersion = '11.0.4'
+    picassoVersion = '2.3.2'
+
+    junitVersion = '4.12'
+    mockitoVersion = '2.8.47'
+
+    //Packages
+    supportPackage = 'com.android.support'
+    retrofitPackage = 'com.squareup.retrofit2'
+
+    reactivePackage = 'io.reactivex.rxjava2'
+
+    picassoPackage = 'com.squareup.picasso'
+    googlePackage = 'com.google.android.gms'
+
+    junitPackage = 'junit'
+    mockitoPackage = 'org.mockito'
+
+    supportDependencies = [
+
+            design      : buildDependency(supportPackage, 'design', supportVersion),
+            recyclerView: buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            cardView    : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            appCompat   : buildDependency(supportPackage, 'appcompat-v7', supportVersion)
+    ]
+
+    retrofitDependencies = [
+
+            retrofit     : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            gson         : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
+            rxAdapterJava: buildDependency(retrofitPackage, 'adapter-rxjava2', retrofitVersion)
+    ]
+
+    rxDependencies = [
+
+            rxAndroid: buildDependency(reactivePackage, 'rxandroid', rxAndroidVersion),
+            rxJava   : buildDependency(reactivePackage, 'rxjava', rxJavaVersion)
+    ]
+
+
+    googlePlay = buildDependency(googlePackage, 'play-services', googleVersion)
+    googleMaps = buildDependency(googlePackage, 'play-services-maps', googleVersion)
+    picasso = buildDependency(picassoPackage, 'picasso', picassoVersion)
+
+
+    testingDependencies = [
+
+            junit  : buildDependency(junitPackage, 'junit', junitVersion),
+            mockito: buildDependency(mockitoPackage, 'mockito-core', mockitoVersion)
+
+    ]
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}

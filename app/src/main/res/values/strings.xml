@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BottleRocket</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="error_loading_stores">There seems to have been some error.</string>
+    <string name="loading_stores">Press the button to load stores!</string>
+    <string name="store_here">Your Store is Here!</string>
+    <string name="google_api_key">AIzaSyDjN2hfQ4BQCCIo7eWIG-Gf6s4XMB1iNDQ</string>
+</resources>
